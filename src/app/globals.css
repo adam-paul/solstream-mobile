@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: rgb(255 255 255);
+  --foreground: rgb(23 23 23);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgb(18 23 28);
+    --foreground: rgb(250 250 250);
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[rgb(18,23,28)] text-white font-sans antialiased;
+  }
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes flash {
+  0% { background-color: transparent; }
+  50% { background-color: rgba(255, 255, 255, 0.1); }
+  100% { background-color: transparent; }
+}
+
+.animate-flash {
+  animation: flash 200ms ease-out;
+}
